@@ -1,0 +1,8 @@
+{
+	"name": "gcdocs",
+	"version": "0.0.1",
+	"dependencies": {
+		"stylus": ">= 0.29.0",
+		"nib": ">= 0.8.2"
+	}
+}

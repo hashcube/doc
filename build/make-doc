@@ -1,0 +1,188 @@
+#!/usr/bin/env bash
+
+#in/out directory structure
+DOC_ROOT=$(cd -P $(dirname "$0") && cd .. && pwd)
+API_ROOT="$DOC_ROOT/api"
+GUIDE_ROOT="$DOC_ROOT/guide"
+NATIVE_ROOT="$DOC_ROOT/native"
+PLUGINS_ROOT="$DOC_ROOT/plugins"
+ASSETS_ROOT="$DOC_ROOT/build/assets"
+OUT_ROOT="$DOC_ROOT/html"
+DOC_TEMPLATE="$DOC_ROOT/build/template.html"
+
+echo "DOC_ROOT=$DOC_ROOT"
+
+echo "
+
+var stylus = require('stylus');
+var nib = require('nib');
+var fs = require('fs');
+var css = fs.readFileSync('$DOC_ROOT/html/include/style.styl', 'utf8');
+
+stylus(css).use(nib()).set('compress', true).render(function (err, css) {
+	if (err) {
+		console.error(err);
+	} else {
+		fs.writeFileSync('$DOC_ROOT/html/include/style.css', css);
+	}
+});
+
+" | node
+
+function print_help {
+		echo "Usage: $(basename $0) [options]"
+		echo " -o=dir   Output directory. Default: $OUT_ROOT"
+		echo " -h       Print this help."
+}
+
+# markdown to html, add doc_root to output file
+function convert_file {
+		local in_file="$1" out_file="$OUT_ROOT/$2" template="$3" title="$4"
+
+		## Covert markdown to html using our template
+		if pandoc -f markdown -t html5 --toc --smart \
+				--standalone --template "$template" \
+				-V title="$title" \
+				--output "$out_file" "$in_file"; then
+				echo "    * $out_file"
+		else
+				echo "Error: Pandoc conversion from file '$in_file'"
+				exit 1
+		fi
+}
+
+# output file name is the complete namespace, determined by directory
+function convert_api_source {
+		while read path; do
+				#remove api_root and beginning slash
+				local rel_path="${path##$API_ROOT}"
+				rel_path="${rel_path#/}"
+				#create namespace file name: name-space-file
+				local ns=$(basename $(echo "$rel_path" | tr '/' '-') '.md' | tr '[:upper:]' '[:lower]')
+				convert_file "$path" "api/$ns.html" "$DOC_TEMPLATE" "$ns"
+		done < <(find "$API_ROOT" -type f -name '*.md' | grep -v -i 'readme')
+}
+
+# ignore readme files
+function convert_guide_source {
+		while read path; do
+				local name=$(basename "$path" '.md' | tr '[:upper:]' '[:lower]' | tr ' ' '-')
+				convert_file "$path" "guide/$name.html" "$DOC_TEMPLATE" "$name"
+		done < <(find "$GUIDE_ROOT" -type f -name '*.md' | grep -v -i 'readme')
+}
+
+# ignore readme files
+function convert_native_source {
+		while read path; do
+				local name=$(basename "$path" '.md' | tr '[:upper:]' '[:lower]' | tr ' ' '-')
+				convert_file "$path" "native/$name.html" "$DOC_TEMPLATE" "$name"
+		done < <(find "$NATIVE_ROOT" -type f -name '*.md' | grep -v -i 'readme')
+}
+
+# convert plugin files
+function convert_plugins {
+		while read path; do
+				local name=$(basename "$path" '.md' | tr '[:upper:]' '[:lower]' | tr ' ' '-')
+				convert_file "$path" "plugins/$name.html" "$DOC_TEMPLATE" "$name"
+		done < <(find "$PLUGINS_ROOT" -type f -name '*.md' | grep -v -i 'readme')
+}
+
+# main
+
+while getopts "o:h" opt; do
+    case $opt in
+				o) OUT_ROOT="$OPTARG";;
+				h) print_help; exit 0;;
+        \?) print_help; exit 0;;
+    esac
+done
+
+# check dependencies ...
+
+if ! which pandoc > /dev/null; then
+		echo "Error: Requires pandoc to build."
+		exit 1
+fi
+
+if ! which m4 > /dev/null; then
+		echo "Error: Requires m4 to insert code examples."
+		exit 1
+fi
+
+# set up output directories ...
+
+if [ -d "$OUT_ROOT/api" ]; then
+		rm -rf "$OUT_ROOT/api"
+fi
+
+if [ -d "$OUT_ROOT/guide" ]; then
+		rm -rf "$OUT_ROOT/guide"
+fi
+
+if [ -d "$OUT_ROOT/native" ]; then
+		rm -rf "$OUT_ROOT/native"
+fi
+
+if [ -d "$OUT_ROOT/plugins" ]; then
+		rm -rf "$OUT_ROOT/plugins"
+fi
+
+mkdir -p "$OUT_ROOT/api"
+mkdir -p "$OUT_ROOT/guide"
+mkdir -p "$OUT_ROOT/native"
+mkdir -p "$OUT_ROOT/plugins"
+
+# copy assets
+cp -a "$API_ROOT/assets" "$OUT_ROOT/api/assets"
+cp -a "$GUIDE_ROOT/assets" "$OUT_ROOT/guide/assets"
+cp -a "$NATIVE_ROOT/assets" "$OUT_ROOT/native/assets"
+cp -a "$PLUGINS_ROOT/assets" "$OUT_ROOT/plugins/assets"
+
+# download the latest plugins docs
+wget --tries=10 https://raw.github.com/gameclosure/airpush/master/README.md -O ./plugins/airpush.md
+wget --tries=10 https://raw.github.com/gameclosure/amplitude/master/README.md -O ./plugins/amplitude.md
+wget --tries=10 https://raw.github.com/gameclosure/appflood/master/README.md -O ./plugins/appflood.md
+wget --tries=10 https://raw.github.com/gameclosure/appnext/master/README.md -O ./plugins/appnext.md
+wget --tries=10 https://raw.github.com/gameclosure/billing/master/README.md -O ./plugins/billing.md
+wget --tries=10 https://raw.github.com/gameclosure/chartboost/master/README.md -O ./plugins/chartboost.md
+wget --tries=10 https://raw.github.com/gameclosure/flurry/master/README.md -O ./plugins/flurry.md
+wget --tries=10 https://raw.github.com/gameclosure/geoloc/master/README.md -O ./plugins/geoloc.md
+wget --tries=10 https://raw.github.com/gameclosure/googleanalytics/master/README.md -O ./plugins/googleanalytics.md
+wget --tries=10 https://raw.github.com/gameclosure/inmobi/master/README.md -O ./plugins/inmobi.md
+wget --tries=10 https://raw.github.com/gameclosure/jumptap/master/README.md -O ./plugins/jumptap.md
+wget --tries=10 https://raw.github.com/gameclosure/leadbolt/master/README.md -O ./plugins/leadbolt.md
+wget --tries=10 https://raw.github.com/gameclosure/mopub/master/README.md -O ./plugins/mopub.md
+wget --tries=10 https://raw.github.com/gameclosure/tapfortap/master/README.md -O ./plugins/tapfortap.md
+wget --tries=10 https://raw.github.com/gameclosure/tapjoy/master/README.md -O ./plugins/tapjoy.md
+wget --tries=10 https://raw.github.com/gameclosure/trademob/master/README.md -O ./plugins/trademob.md
+wget --tries=10 https://raw.github.com/gameclosure/sponsorpay/master/README.md -O ./plugins/sponsorpay.md
+wget --tries=10 https://raw.github.com/gameclosure/facebook/master/README.md -O ./plugins/facebook.md
+wget --tries=10 https://raw.github.com/gameclosure/metaps/master/README.md -O ./plugins/metaps.md
+wget --tries=10 https://raw.github.com/gameclosure/ouya/master/README.md -O ./plugins/ouya.md
+wget --tries=10 https://raw.github.com/gameclosure/localnotify/master/README.md -O ./plugins/localnotify.md
+wget --tries=10 https://raw.github.com/gameclosure/appsflyer/master/README.md -O ./plugins/appsflyer.md
+wget --tries=10 https://raw.github.com/gameclosure/accelerometer/master/README.md -O ./plugins/accelerometer.md
+wget --tries=10 https://raw.github.com/gameclosure/apsalar/master/README.md -O ./plugins/apsalar.md
+wget --tries=10 https://raw.github.com/gameclosure/mixpanel/master/README.md -O ./plugins/mixpanel.md
+
+# and off we go ...
+
+echo "  Generating api docs ..."
+convert_api_source
+echo "  Generating guide docs ..."
+convert_guide_source
+echo "  Generating native docs ..."
+convert_native_source
+echo "  Generating plugin docs ..."
+convert_plugins
+
+echo "  Generating Cache.Manifest ..."
+echo "CACHE MANIFEST" > $OUT_ROOT/cache.manifest
+echo "# Revision `date +%s`" >> $OUT_ROOT/cache.manifest
+echo "CACHE:" >> $OUT_ROOT/cache.manifest
+cd $OUT_ROOT && find . -type f \( -iname "*.htm*" -o -iname "*.js" -o -iname "*.css" \) -print >> ./cache.manifest && cd $DOC_ROOT
+echo "NETWORK:" >> $OUT_ROOT/cache.manifest
+echo "*" >> $OUT_ROOT/cache.manifest
+
+echo "Thanks for using the best build script ever written! Go forth and conquer the universe with most excellent documentation."
+

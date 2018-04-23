@@ -358,8 +358,8 @@ Here is Billy's `~/.gitconfig`, featuring his famous recipe for git console colo
 
 ~~~
 [user]
-  name = Johnny Hashcube
-  email = you@Hashcube.com
+  name = Johnny Game Closure
+  email = you@gameclosure.com
 
 [apply]
   whitespace = nowarn

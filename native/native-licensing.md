@@ -1,6 +1,6 @@
 #Libraries Used
 
-The following is a list of libraries used within the native components of the Hashcube DevKit.
+The following is a list of libraries used within the native components of the Game Closure DevKit.
 
 ###Android Java
 

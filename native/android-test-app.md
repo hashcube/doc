@@ -1,12 +1,12 @@
 # Android Test App
 
-Test your game code live on a device with the Hashcube Test App.  You will host a server on your computer, and set up your mobile device to use WiFi.  Build and run the Test App on your device.
+Test your game code live on a device with the Game Closure Test App.  You will host a server on your computer, and set up your mobile device to use WiFi.  Build and run the Test App on your device.
 
 Select your server from the on-screen list, then select which game to test.  Making code changes on your computer can be pushed quickly to the device by restarting the game with the on-screen debug menu (see below).
 
 ## Setup
 
-Be sure to read the [Android Setup Guide](./android-setup.html) and follow the instruction there to prepare for Android development with the Hashcube DevKit.
+Be sure to read the [Android Setup Guide](./android-setup.html) and follow the instruction there to prepare for Android development with the Game Closure DevKit.
 
 Turn on WiFi and connect your mobile device to the same LAN as your computer.
 
@@ -15,10 +15,10 @@ Turn on WiFi and connect your mobile device to the same LAN as your computer.
 To run the Android Test App on your mobile device, connect it to your computer via a USB data cable, and enter the following command at a console:
 
 ~~~
-$ Devkit testapp native-android
+$ devkit testapp native-android
 ~~~
 
-It will build and attempt to install the Test App on your device and start the Devkit server.
+It will build and attempt to install the Test App on your device and start the devkit server.
 
 After installation you will be able to launch the Test App from the applications list on your Android device:
 

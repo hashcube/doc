@@ -1,12 +1,12 @@
 # iOS Test App
 
-Test your game code live on a device with the Hashcube Test App.  You will host a server on your computer, and set up your mobile device to use WiFi.  Build and run the Test App on your device using Xcode.
+Test your game code live on a device with the Game Closure Test App.  You will host a server on your computer, and set up your mobile device to use WiFi.  Build and run the Test App on your device using Xcode.
 
 Select your server from the on-screen list, then select which game to test.  Making code changes on your computer can be pushed quickly to the device by restarting the game with a circular gesture (See Restarting below).
 
 ## Setup
 
-Be sure to read the [iOS Setup Guide](./ios-setup.html) and follow the instruction there to prepare for iOS development with the Hashcube DevKit.
+Be sure to read the [iOS Setup Guide](./ios-setup.html) and follow the instruction there to prepare for iOS development with the Game Closure DevKit.
 
 Turn on WiFi and connect your mobile device to the same LAN as your computer.
 
@@ -15,7 +15,7 @@ Turn on WiFi and connect your mobile device to the same LAN as your computer.
 To run the iOS Test App on your mobile device, connect it to your computer via a USB data cable, and enter the following command at a console:
 
 ~~~
-$ Devkit testapp native-ios
+$ devkit testapp native-ios
 ~~~
 
 The iOS Test App Xcode project will open after a moment.  Select a device to install it to at the top, and hit the Play button to build and install the Test App to the device.
@@ -29,14 +29,14 @@ After installation you will be able to launch the Test App from its app icon on 
 </figure>
 </div>
 
-This will also run the Devkit Server, which is needed for the Test App to run properly.
+This will also run the devkit Server, which is needed for the Test App to run properly.
 
-## Running the Devkit Server
+## Running the devkit Server
 
-An instance of the DevKit Devkit server must be running to serve games for the test app.  To start a new Devkit server without building the Test App enter this command at a console:
+An instance of the DevKit devkit server must be running to serve games for the test app.  To start a new devkit server without building the Test App enter this command at a console:
 
 ~~~
-$ Devkit serve
+$ devkit serve
 ~~~
 
 This will start hosting the Test App Server on your LAN.

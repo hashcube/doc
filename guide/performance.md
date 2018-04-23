@@ -2,7 +2,7 @@
 
 ## Overview
 
-A smooth framerate in your game is essential for a good user experience.  The Hashcube DevKit allows you to write your game code rapidly in JavaScript software, which will then also run accelerated on mobile hardware.
+A smooth framerate in your game is essential for a good user experience.  The Game Closure DevKit allows you to write your game code rapidly in JavaScript software, which will then also run accelerated on mobile hardware.
 
 Reaching your performance goals requires keeping a few key concepts in mind while coding.  JavaScript is a garbage-collected language, meaning that periodically all of the disposed objects need to be collected and freed so the memory can be reused.  This garbage collection can cause frames to drop if a large number of objects are being created and freed by your game.
 

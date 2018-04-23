@@ -1,6 +1,6 @@
 # Debugging with Chrome Web Inspector
 
-The Hashcube DevKit leverages the power of [Google Chrome's](http://www.google.com/chrome) built-in web inspector to accelerate HTML5 game development.  This guide will help you get started using the major features of the Web Inspector.
+The Game Closure DevKit leverages the power of [Google Chrome's](http://www.google.com/chrome) built-in web inspector to accelerate HTML5 game development.  This guide will help you get started using the major features of the Web Inspector.
 
 ## Opening Web Inspector
 

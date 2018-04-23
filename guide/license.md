@@ -1,14 +1,14 @@
 # License
 
-## Hashcube DevKit
+## Game Closure DevKit
 
-Hashcube offers two licensing options which are designed to be complementary, the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html) and the [Hashcube Free License (GCFL)](http://www.Hashcube.com/GCFL-1.0.pdf). These licenses allow you to have source code access to the DevKit, but still release proprietary games. You’ll never have to pay us any money to use the DevKit under either of these options.
+Game Closure offers two licensing options which are designed to be complementary, the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html) and the [Game Closure Free License (GCFL)](http://www.Game Closure.com/GCFL-1.0.pdf). These licenses allow you to have source code access to the DevKit, but still release proprietary games. You’ll never have to pay us any money to use the DevKit under either of these options.
 
-For complete licensing information please refer to the [license page](http://www.Hashcube.com/license.html) of the Hashcube website.
+For complete licensing information please refer to the [license page](http://www.gameclosure.com/license.html) of the Game Closure website.
 
 ## Documentation
 
-The documentation for the Hashcube DevKit is licensed under
+The documentation for the Game Closure DevKit is licensed under
 the [Creative Commons](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 and allows you to copy, distribute, transmit, and adapt
 the work. This can be done under the conditions that you

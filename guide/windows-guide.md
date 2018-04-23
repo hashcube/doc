@@ -1,8 +1,8 @@
 # Windows Guide
 
-This guide will get you up and running with the Hashcube
+This guide will get you up and running with the Game Closure
 DevKit. First, you'll download and install the DevKit, then get introduced
-to `Devkit`, our command-line tool for creating new projects
+to `devkit`, our command-line tool for creating new projects
 and development. Once everything is installed and ready
 to go, please read the [Hello, World! Guide](../guide/hello-world.html)
 to create your first application.
@@ -10,20 +10,20 @@ to create your first application.
 
 ## Prerequisites
 
-The following is a list of prequisites for running the Hashcube DevKit on Windows.
+The following is a list of prequisites for running the Game Closure DevKit on Windows.
 Download the following projects and refer to the sections below for configuration tips.
 
 **Web and Native Development**
 
 * [msysgit](http://msysgit.github.com/) (> 1.7.10)
-	* The full installer should be used since it contains the `git bash` command prompt that is needed to run `Devkit` and the commands below. THe default options during the installation process will work with the GC Devkit.
+	* The full installer should be used since it contains the `git bash` command prompt that is needed to run `devkit` and the commands below. THe default options during the installation process will work with the GC devkit.
 * [Node.js](http://nodejs.org) (> 0.8)
 * [npm](https://npmjs.org/package/windows)
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/)
 * [Chrome](http://www.google.com/chrome)
 	* The Chrome web browser is the preferred development
 environment because of its superior debugging tools. This is
-the browser we use to develop the Hashcube DevKit and test against.
+the browser we use to develop the Game Closure DevKit and test against.
 
 **Android Development**
 
@@ -32,7 +32,7 @@ the browser we use to develop the Hashcube DevKit and test against.
 * [Android NDK](http://developer.android.com/tools/sdk/ndk/)
 * [Apache Ant](http://ant.apache.org/manual/install.html)
 
-For more information, see the [Android Setup Guide](http://doc.Hashcube.com/native/android-setup.html).
+For more information, see the [Android Setup Guide](http://doc.gameclosure.com/native/android-setup.html).
 
 ###Installation Tip
 
@@ -85,17 +85,17 @@ For more information on managing environment variables in Windows, see [Microsof
 ## Install the DevKit
 
 With the prerequisites installed, we're ready to set up the
-Hashcube DevKit. The library and tools are open source and
-hosted in our [GitHub repository](https://github.com/Hashcube/devkit).
+Game Closure DevKit. The library and tools are open source and
+hosted in our [GitHub repository](https://github.com/hashcube/devkit).
 We'll be using the `git` tool to keep our software updated,
 and there is [lots of help](https://help.github.com)
 available for how to use it.
 
-To download the Hashcube DevKit, open a `git bash` terminal, and issue the following
+To download the Game Closure DevKit, open a `git bash` terminal, and issue the following
 commands:
 
 ~~~
-$ git clone git@github.com:Hashcube/devkit.git
+$ git clone git@github.com:Game Closure/devkit.git
 $ cd devkit
 ~~~
 
@@ -107,20 +107,20 @@ run the install script:
 $ ./install.sh
 ~~~
 
-This installs the command-line program `Devkit` which is used
-create and serve projects. To see a list of Devkit commands,
+This installs the command-line program `devkit` which is used
+create and serve projects. To see a list of devkit commands,
 simply run it in your terminal without any arguments:
 
 ~~~
-$ Devkit
+$ devkit
 ~~~
 
-This prints out a list of Devkit commands. You can get
-help for a particular command by typing `Devkit help [command]`,
+This prints out a list of devkit commands. You can get
+help for a particular command by typing `devkit help [command]`,
 for example:
 
 ~~~
-$ Devkit help init
+$ devkit help init
 ~~~
 
 Some commands also take a `-h` argument to show help.
@@ -130,14 +130,14 @@ Some commands also take a `-h` argument to show help.
 To keep your copy of the DevKit up to date, run the update command:
 
 ~~~
-$ Devkit update
+$ devkit update
 ~~~
 
-The update command is also able to check out older versions of the DevKit or different channels of DevKit versions.  Read the help menu with `Devkit update --help` for more information on this flexible tool.
+The update command is also able to check out older versions of the DevKit or different channels of DevKit versions.  Read the help menu with `devkit update --help` for more information on this flexible tool.
 
 ## Play With Examples
 
-Once `Devkit` is installed you're ready to check out a few
+Once `devkit` is installed you're ready to check out a few
 example projects. First, take a look at the [Hello, World! Guide](../guide/hello-world.html)
 to see how to create a new project. After that, you should
 be ready to browse some more complicated projects. There are
@@ -145,6 +145,6 @@ a bunch contained within the *examples addon*, which comes with
 a fresh DevKit install.
 
 This addon installs a collection of projects that demonstrate
-some game development techniques using the Hashcube
-DevKit. When you run Devkit you'll be able to browse and run the
+some game development techniques using the Game Closure
+DevKit. When you run devkit you'll be able to browse and run the
 projects, and also see the annotated source for each.

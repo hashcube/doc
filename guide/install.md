@@ -1,8 +1,8 @@
 # 1. Quick Start: Installation
 
-This guide will get you up and running with the Hashcube
+This guide will get you up and running with the Game Closure
 DevKit. First, you'll download and install DevKit, then get introduced
-to `Devkit`, our command-line tool for creating new projects
+to `devkit`, our command-line tool for creating new projects
 and development. Once everything is installed and ready
 to go, please read the [Hello, World! Guide](../guide/hello-world.html)
 to create your first application.
@@ -11,7 +11,7 @@ This guide is mainly for Linux or OSX.  To install on Windows please follow the 
 
 ## Prerequisites
 
-Install the following software before installing the Hashcube DevKit:
+Install the following software before installing the Game Closure DevKit:
 
 * [Git](http://git-scm.com) (> 1.7.10)
 * [Node.js](http://nodejs.org) (> 0.8)
@@ -50,17 +50,17 @@ Now problematic characters like NBSP will be highlighted in red and you can dele
 ## Install DevKit
 
 With the prerequisites installed, we're ready to set up the
-Hashcube DevKit. The library and tools are open source and
-hosted in our [GitHub repository](https://github.com/Hashcube/devkit).
+Game Closure DevKit. The library and tools are open source and
+hosted in our [GitHub repository](https://github.com/hashcube/devkit).
 We'll be using the `git` tool to keep our software updated,
 and there is [lots of help](https://help.github.com)
 available for how to use `git`.
 
-To download the Hashcube DevKit, issue the following
+To download the Game Closure DevKit, issue the following
 commands at the terminal:
 
 ~~~
-$ git clone https://github.com/Hashcube/devkit
+$ git clone https://github.com/hashcube/devkit
 ~~~
 
 This downloads the DevKit in to the `./devkit` directory located
@@ -72,20 +72,20 @@ $ cd devkit
 $ ./install.sh
 ~~~
 
-This installs the command-line program `Devkit`, which is used to
-create and serve projects. To see a list of Devkit commands,
+This installs the command-line program `devkit`, which is used to
+create and serve projects. To see a list of devkit commands,
 simply run it in your terminal without any arguments:
 
 ~~~
-$ Devkit
+$ devkit
 ~~~
 
-This prints out a list of Devkit commands. You can get
-help for a particular command by typing `Devkit help [command]`,
+This prints out a list of devkit commands. You can get
+help for a particular command by typing `devkit help [command]`,
 for example:
 
 ~~~
-$ Devkit help init
+$ devkit help init
 ~~~
 
 Some commands can also take a `-h` argument to show help.
@@ -95,12 +95,12 @@ Some commands can also take a `-h` argument to show help.
 To keep your copy of the DevKit up to date, run the update command:
 
 ~~~
-$ Devkit update
+$ devkit update
 ~~~
 
-The update command is also able to check out older versions of the DevKit or different channels of DevKit versions.  Read the help menu with `Devkit update --help` for more information on this flexible tool.
+The update command is also able to check out older versions of the DevKit or different channels of DevKit versions.  Read the help menu with `devkit update --help` for more information on this flexible tool.
 
 ## Hello, World!
 
-Once `Devkit` is installed you're ready to create a new game project.  Take a look at the [Hello, World! Guide](../guide/hello-world.html) to see how to get started using the Hashcube DevKit.
+Once `devkit` is installed you're ready to create a new game project.  Take a look at the [Hello, World! Guide](../guide/hello-world.html) to see how to get started using the Game Closure DevKit.
 

@@ -4,7 +4,7 @@
 
 Running your game on an iPhone or iPad for the first time is that \"I made it!\" moment when it finally feels real.  This guide will help you get from developing in a browser to showing your new game off at parties.
 
-Building your game to run on a mobile device is done using the Hashcube DevKit `Devkit` command-line tool.  
+Building your game to run on a mobile device is done using the Game Closure DevKit `devkit` command-line tool.  
 
 ## Prerequisites
 
@@ -13,9 +13,9 @@ You will need some tools for iOS development:
 + Mac OS X 10.6 (or newer) computer
 + iPhone/iPad sync cable
 + Xcode 4.4 (or newer) and Xcode command-line tools
-+ Hashcube DevKit (Devkit)
++ Game Closure DevKit (devkit)
 
-For a guide on installing the Hashcube DevKit [please see this documentation](../guide/install.html).
+For a guide on installing the Game Closure DevKit [please see this documentation](../guide/install.html).
 
 ### Supported Mobile Devices
 
@@ -45,17 +45,17 @@ To get started with iOS development, you will need to access the Member Center o
 
 Start Xcode.  Open the Organizer.  Select "Provisioning Profiles" on the left tab.  In the lower-right corner hit Refresh.  This should download and install the new certificate on your computer.  At this point you should be able to install to devices that have been added to your developer portal (see below).
 
-## Install iOS Plugin for Devkit
+## Install iOS Plugin for devkit
 
-Devkit is the command-line tool you will use from the Hashcube DevKit to perform native builds.  Make sure your version of Devkit is up to date with `Devkit update`.
+devkit is the command-line tool you will use from the Game Closure DevKit to perform native builds.  Make sure your version of devkit is up to date with `devkit update`.
 
-The first step to doing iOS development with Devkit is to install the iOS plugin.  At a command-line enter the command:
+The first step to doing iOS development with devkit is to install the iOS plugin.  At a command-line enter the command:
 
 ~~~
-$ Devkit install native-ios
+$ devkit install native-ios
 ~~~
 
-This downloads and installs the iOS plugin for Devkit.  The download may take some time since it is a large plugin, so please be patient.
+This downloads and installs the iOS plugin for devkit.  The download may take some time since it is a large plugin, so please be patient.
 
 ## Setting Up Your Game Manifest
 
@@ -158,19 +158,19 @@ At this point you are ready to start building for iOS!  Check out the [building 
 
 If you run into problems, try our [iOS troubleshooting guide](./ios-troubleshooting.html).
 
-### Appendix: Manual Install of iOS Plugin for Devkit
+### Appendix: Manual Install of iOS Plugin for devkit
 
-Clone the Hashcube
-[iOS GitHub repository](https://github.com/Hashcube/native-ios). Switch to this directory and make sure everything is up-to-date:
+Clone the Game Closure
+[iOS GitHub repository](https://github.com/hashcube/native-ios). Switch to this directory and make sure everything is up-to-date:
 
 ~~~
-$ git clone https://github.com/Hashcube/native-ios
+$ git clone https://github.com/hashcube/native-ios
 $ cd native-ios
 $ git checkout develop
 $ git submodule update --init
 ~~~
 
-Edit the Devkit configuration file **config.json** located in the root of the Devkit install to point to the install location of the iOS plugin:
+Edit the devkit configuration file **config.json** located in the root of the devkit install to point to the install location of the iOS plugin:
 
 ~~~
 {

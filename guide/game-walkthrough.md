@@ -1231,14 +1231,14 @@ The menu system for your game should be created once near the start of the game 
 
 All View objects for your game should be created before they are needed rather than directly in response to user input.  For instance it would be slow to create a new Enemy object every time you needed one in-game.  Instead you should have a ViewPool of Enemy objects that stay allocated and get reused as needed.
 
-For examples of using ViewPools, see the official [ViewPools example](http://doc.Game Closure.com/example/views-pools/) or the Isometric game engine's [GridLayerView](https://github.com/hashcube/isometric/blob/master/views/GridLayerView.js).
+For examples of using ViewPools, see the official [ViewPools example](http://doc.gameclosure.com/example/views-pools/) or the Isometric game engine's [GridLayerView](https://github.com/hashcube/isometric/blob/master/views/GridLayerView.js).
 
 
 #### Lots of Views: Using the blockEvents property
 
 If you are allocating many Views for e.g. a tile-based map or particle-intensive simulation it would be a good idea to initialize the parent view with `blockEvents: true`.  This prevents the input code from interrogating all the subviews about input events, which is a huge performance improvement.
 
-A good parent View to use is the GestureView.  See the [GestureView example](http://doc.Game Closure.com/example/events-input-gesture/) for how to subscribe to Swipe, Pinch, Rotate, DragSingle, FingerDown, FingerUp, and ClearMulti events.
+A good parent View to use is the GestureView.  See the [GestureView example](http://doc.gameclosure.com/example/events-input-gesture/) for how to subscribe to Swipe, Pinch, Rotate, DragSingle, FingerDown, FingerUp, and ClearMulti events.
 
 The `canHandleEvents: false` property is similarly useful.  The difference is that a View with `canHandleEvents: false` will still pass events to its children, so it is mainly used for making a view transparent to input.
 

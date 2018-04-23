@@ -32,7 +32,7 @@ the browser we use to develop the Game Closure DevKit and test against.
 * [Android NDK](http://developer.android.com/tools/sdk/ndk/)
 * [Apache Ant](http://ant.apache.org/manual/install.html)
 
-For more information, see the [Android Setup Guide](http://doc.Game Closure.com/native/android-setup.html).
+For more information, see the [Android Setup Guide](http://doc.gameclosure.com/native/android-setup.html).
 
 ###Installation Tip
 

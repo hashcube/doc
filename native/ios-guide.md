@@ -1,6 +1,6 @@
 # iOS Development Guide
 
-This guide takes you through the entire process of developing for iOS devices with the Hashcube DevKit.
+This guide takes you through the entire process of developing for iOS devices with the Game Closure DevKit.
 
 ## [Overview](./ios-stages.html)
 
@@ -12,7 +12,7 @@ Then [iOS building](./ios-build.html) is encouraged to test and demo your game, 
 
 ## [Setup](./ios-setup.html)
 
-The [Hashcube DevKit setup guides](./ios-setup.html) will get you up and running as fast as possible.
+The [Game Closure DevKit setup guides](./ios-setup.html) will get you up and running as fast as possible.
 
 ## [Test App](./ios-test-app.html) with [Remote Debugging](./ios-remote-debug.html)
 

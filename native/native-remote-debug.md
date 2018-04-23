@@ -1,8 +1,8 @@
-# Hashcube Remote JavaScript Debugger
+# Game Closure Remote JavaScript Debugger
 
 ## Overview
 
-The GameClosure [Native Inspector](http://github.com/Hashcube/NativeInspector) is a node.js project that provides:
+The GameClosure [Native Inspector](http://github.com/hashcube/NativeInspector) is a node.js project that provides:
 
 + JavaScript debugging
 + Console logs
@@ -17,7 +17,7 @@ The GameClosure [Native Inspector](http://github.com/Hashcube/NativeInspector) i
 
 NativeInspector runs a web server that hosts a modified copy of the bleeding-edge [WebKit Web Inspector code](http://svn.webkit.org/repository/webkit/trunk/Source/WebCore/inspector/front-end/) that is part of the Chrome browser.  We fixed bugs and added features required for use with the DevKit.
 
-The general approach is inspired by Danny Coates' [node-inspector](https://github.com/dannycoates/node-inspector) project.  This is a complete cleanroom implementation with different goals.  The primary difference in motivation is that this project is supposed to integrate perfectly with the Hashcube DevKit on Android and iOS.
+The general approach is inspired by Danny Coates' [node-inspector](https://github.com/dannycoates/node-inspector) project.  This is a complete cleanroom implementation with different goals.  The primary difference in motivation is that this project is supposed to integrate perfectly with the Game Closure DevKit on Android and iOS.
 
 ### Network Protocol
 
@@ -29,15 +29,15 @@ Google documentation on remote debugging is available [here](https://developers.
 
 NativeInspector actively attempts to use the Android Debug Bridge (adb) to connect to port 9222 on an Android device attached via USB data cable.
 
-On the device side, the Android codebase for Hashcube runs a V8 Debug Server.  This implements nearly all of the features required; we added heap and CPU profiling hooks into our iOS codebase also (such as `PROFILING.getHeaders()`), so that these can be remotely evaluated from the NativeInspector code when profiling is requested in the web interface.
+On the device side, the Android codebase for Game Closure runs a V8 Debug Server.  This implements nearly all of the features required; we added heap and CPU profiling hooks into our iOS codebase also (such as `PROFILING.getHeaders()`), so that these can be remotely evaluated from the NativeInspector code when profiling is requested in the web interface.
 
 ### iOS
 
 NativeInspector also attempts to connect to any IP addresses that have been identified by a simple UDP datagram protocol.  NativeInspector listens on UDP port 9320 on the localhost.  Received datagrams must contain a valid JSON string with the format: `{ "name": "connect", "addr": "10.1.1.123" }`.  This is the approach used to connect to iOS devices on the LAN.
 
-On the device side, the iOS codebase for Hashcube runs a custom debug server written from scratch.  The core of the D8 protocol is implemented in Objective-C++ for this platform, making it mostly feature-complete.  To avoid running the debug server for every game, the debug server will only run in Test App mode.
+On the device side, the iOS codebase for Game Closure runs a custom debug server written from scratch.  The core of the D8 protocol is implemented in Objective-C++ for this platform, making it mostly feature-complete.  To avoid running the debug server for every game, the debug server will only run in Test App mode.
 
-When the Test App connects to the Devkit simulation server, the Devkit server will report the requesting IP address over UDP to the NativeInspector as indicated above.
+When the Test App connects to the devkit simulation server, the devkit server will report the requesting IP address over UDP to the NativeInspector as indicated above.
 
 ## Troubleshooting
 
@@ -50,12 +50,12 @@ Try the following steps in order of increasing severity:
 
 ## Installation
 
-This is a part of the [Hashcube DevKit project](http://docs.Hashcube.com), and does not require configuration when used in conjunction with the normal DevKit installation process.
+This is a part of the [Game Closure DevKit project](http://docs.Game Closure.com), and does not require configuration when used in conjunction with the normal DevKit installation process.
 
 To install the software for stand-alone use and set it up:
 
 ~~~
-$ git clone https://github.com/Hashcube/NativeInspector
+$ git clone https://github.com/hashcube/NativeInspector
 $ cd NativeInspector
 $ npm install
 ~~~
@@ -66,7 +66,7 @@ The front-end is only confirmed to work with Google Chrome so you may also want 
 
 ## Usage
 
-This is a part of the [Hashcube DevKit project](http://docs.Hashcube.com), and is part of the Hashcube DevKit web interface under `Remote Debug`.
+This is a part of the [Game Closure DevKit project](http://docs.Game Closure.com), and is part of the Game Closure DevKit web interface under `Remote Debug`.
 
 To manually run the software:
 

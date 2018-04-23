@@ -4,14 +4,14 @@
 
 Running your game on an iPhone or iPad for the first time is that "I made it!" moment where it finally feels real.  This guide will help you get from developing in a browser to showing your new game.
 
-Building your game to run on a mobile device is done using the Hashcube DevKit `Devkit` command-line tool.  See the [iOS Setup Guide](./ios-setup.html) for steps to get prerequisites, supported mobile devices, and steps on getting started.
+Building your game to run on a mobile device is done using the Game Closure DevKit `devkit` command-line tool.  See the [iOS Setup Guide](./ios-setup.html) for steps to get prerequisites, supported mobile devices, and steps on getting started.
 
 ## Building for Xcode
 
 To build your game enter:
 
 ~~~
-$ Devkit debug native-ios
+$ devkit debug native-ios
 ~~~
 
 An Xcode project window will pop up.  If you installed the simulators during setup, then you can use the drop-down list at the top to select an iPad or iPhone simulator and which iOS version to simulate.
@@ -21,12 +21,12 @@ It is recommended to do as much of your testing as possible with the simulator b
 For a more thorough release-mode build enter:
 
 ~~~
-$ Devkit release native-ios
+$ devkit release native-ios
 ~~~
 
 ## Watching JavaScript Logs
 
-JavaScript logs are generated when you use `console.log` from within your code, and the Hashcube DevKit will also write out helpful messages.
+JavaScript logs are generated when you use `console.log` from within your code, and the Game Closure DevKit will also write out helpful messages.
 
 The logs will scroll in the Debug area at the bottom of the Xcode project window in the right-side tab.
 
@@ -63,7 +63,7 @@ After your App ID provisioning profile is added to the list of Development Provi
 Run the build command with the `--ipa` flag to create an .IPA file for your game:
 
 ~~~
-$ Devkit build native-ios --ipa --provision /Users/bboy/Desktop/BeardsOnBoards.mobileprovision --name="Bob Baxter"
+$ devkit build native-ios --ipa --provision /Users/bboy/Desktop/BeardsOnBoards.mobileprovision --name="Bob Baxter"
 ~~~
 
 ## Troubleshooting Issues
@@ -97,7 +97,7 @@ When --ipa is specified, Xcode will not pop up after the build.
 **For a fast debug build:**
 
 ~~~
-$ Devkit debug native-ios
+$ devkit debug native-ios
 ~~~
 
 This specifies a debug build, cleans before building, does not compress JavaScript, and will open Xcode after build completes.
@@ -105,7 +105,7 @@ This specifies a debug build, cleans before building, does not compress JavaScri
 **For a thorough release build:**
 
 ~~~
-$ Devkit release native-ios
+$ devkit release native-ios
 ~~~
 
 This specifies a release build, cleans before building, compresses JavaScript, and will open Xcode after build completes.
@@ -113,7 +113,7 @@ This specifies a release build, cleans before building, compresses JavaScript, a
 **For an IPA release build:**
 
 ~~~
-$ Devkit release native-ios --ipa --provision "/Users/bboy/Desktop/BeardsOnBoards.mobileprovision" --name="Bob Baxter"
+$ devkit release native-ios --ipa --provision "/Users/bboy/Desktop/BeardsOnBoards.mobileprovision" --name="Bob Baxter"
 ~~~
 
 This specifies a release build, cleans before building, compresses JavaScript, signs an IPA file with the given mobile provision for Bob Baxter, and does not open Xcode.

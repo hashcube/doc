@@ -2,7 +2,7 @@
 
 ## Overview
 
-On a mobile iOS device it is possible to watch console logs, inspect JavaScript objects, set breakpoints in running JavaScript code, and break on exceptions with the Hashcube DevKit.  This feature is called Remote JavaScript Debugging and is only available in the Hashcube iOS Test App.
+On a mobile iOS device it is possible to watch console logs, inspect JavaScript objects, set breakpoints in running JavaScript code, and break on exceptions with the Game Closure DevKit.  This feature is called Remote JavaScript Debugging and is only available in the Game Closure iOS Test App.
 
 When your JavaScript code throws an exception running on the native device but not the browser, normally you would be out of luck.  A typical way to debug these issues would be to laborously sprinkle log statements throughout your code to hopefully gain enough visibility into what it is doing.
 
@@ -10,7 +10,7 @@ A more direct approach would be to break on the exception and inspect the JavaSc
 
 ## Setup
 
-Run `Devkit serve` and launch a Chrome web browser.  Navigate to the Hashcube DevKit webapp at `http://localhost:9200` in the web browser.  Select "Remote Debug" from the left-hand navigation pane.  After a moment you will see a web inspector app in the right-hand pane.
+Run `devkit serve` and launch a Chrome web browser.  Navigate to the Game Closure DevKit webapp at `http://localhost:9200` in the web browser.  Select "Remote Debug" from the left-hand navigation pane.  After a moment you will see a web inspector app in the right-hand pane.
 
 Remote JavaScript debugging is only available when using the [Test App](./ios-test-app.html).  To install the test app, launch its Xcode project ([see test app documentation](./ios-test-app.html)), attach a mobile device, and run the Xcode project on the device.
 

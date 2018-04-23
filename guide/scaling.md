@@ -3,13 +3,13 @@
 In this guide you'll see how to scale your game in a way
 that fits multiple device aspect ratios. This example is
 part of the *examples* add-on, which can be installed in to
-Devkit with the following at your command line:
+devkit with the following at your command line:
 
 ~~~
-$ Devkit install examples
+$ devkit install examples
 ~~~
 
-In the Devkit web interface, navigate to **Projects >
+In the devkit web interface, navigate to **Projects >
 Examples > Layout: Scale Region** to run the example in the simulator.
 
 It can also be [viewed online](../example/basics-scalescreen/)

@@ -2,7 +2,7 @@
 
 ## Overview
 
-On a mobile Android device it is possible to watch console logs, inspect JavaScript objects, set breakpoints in running JavaScript code, break on exceptions, and do CPU or heap profiling with the Hashcube DevKit.  This feature is called Remote JavaScript Debugging and is available in any debug-mode game built with the Hashcube DevKit.
+On a mobile Android device it is possible to watch console logs, inspect JavaScript objects, set breakpoints in running JavaScript code, break on exceptions, and do CPU or heap profiling with the Game Closure DevKit.  This feature is called Remote JavaScript Debugging and is available in any debug-mode game built with the Game Closure DevKit.
 
 When your JavaScript code throws an exception running on the native device but not the browser, normally you would be out of luck.  A typical way to debug these issues would be to laborously sprinkle log statements throughout your code to hopefully gain enough visibility into what it is doing.
 
@@ -10,7 +10,7 @@ A more direct approach would be to break on the exception and inspect the JavaSc
 
 ## Setup
 
-Run `Devkit serve` and launch a Chrome web browser.  Navigate to the Hashcube DevKit webapp at `http://localhost:9200` in the web browser.  Select "Remote Debug" from the left-hand navigation pane.  After a moment you will see a web inspector app in the right-hand pane.
+Run `devkit serve` and launch a Chrome web browser.  Navigate to the Game Closure DevKit webapp at `http://localhost:9200` in the web browser.  Select "Remote Debug" from the left-hand navigation pane.  After a moment you will see a web inspector app in the right-hand pane.
 
 Remote JavaScript debugging is only available for Android devices connected via a USB cable, running a game built with the --debug and --no-compress flags.  See the [Android build documentation](./android-build.html) for more information on the build process.
 
